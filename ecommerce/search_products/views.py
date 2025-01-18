@@ -4,7 +4,7 @@ from django import views
 
 # Create your views here.
 
-class home(TemplateView):
+class HomeView(TemplateView):
     template_name = "search_products/home.html"
 
 
