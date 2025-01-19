@@ -4,6 +4,123 @@
 
 {% block content %}
 
-    <h1>Welcome to my ebay clone!</h1>
+ <!-- 🔹 Top Navigation Bar -->
+ <nav class="bg-gray-900 text-white text-sm">
+    <div class="container mx-auto flex justify-between p-2">
+        <div>
+            <a href="#" class="px-3 hover:underline">Daily Deals</a>
+            <a href="#" class="px-3 hover:underline">Brand Outlet</a>
+            <a href="#" class="px-3 hover:underline">Help & Contact</a>
+        </div>
+        <div>
+            <a href="#" class="px-3 hover:underline">Sign in</a>
+            <a href="#" class="px-3 hover:underline">Register</a>
+            <a href="#" class="px-3 hover:underline">My eBay</a>
+            <a href="#" class="px-3 hover:underline">Cart 🛒</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 🔹 Main Navigation -->
+<nav class="bg-white shadow-md py-3">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#">
+            <ul class="flex px-3 space-x-0 font-ebay">
+                <li class="text-4xl font-bold text-red-600">e</li>
+                <li class="text-4xl font-bold text-blue-600">b</li>
+                <li class="text-4xl font-bold text-yellow-500">a</li>
+                <li class="text-4xl font-bold text-green-500">y</li>
+            </ul>    
+        </a>
+          
+        <!-- Search Bar -->
+        <div class="flex-grow mx-6">
+            <div class="flex bg-white border border-gray-300 rounded-lg overflow-hidden">
+                <select class="px-3 bg-gray-200 text-sm border-r">
+                    <option>All Categories</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Home & Garden</option>
+                    <option>Motors</option>
+                </select>
+                <input type="text" placeholder="Search for anything" class="flex-grow px-3 py-2 focus:outline-none">
+                <button class="bg-yellow-400 px-4 text-gray-900 font-bold">Search</button>
+            </div>
+        </div>
+
+        <a href="#" class="px-4 text-gray-700">Sell</a>
+    </div>
+</nav>
+
+<!-- 🔹 Hero Section -->
+<header class="relative bg-gray-800 text-white text-center py-16 my-8 mx-3 md:mx-12 rounded-xl">
+    <h1 class="text-4xl font-bold">Great Deals & Discounts</h1>
+    <p class="mt-2 text-lg">Shop top brands and trending products</p>
+    <button class="mt-6 bg-yellow-400 text-gray-900 px-6 py-3 rounded-md font-bold">Shop Now</button>
+</header>
+
+<!-- 🔹 Categories -->
+<section class="container mx-auto mt-10">
+    <h2 class="text-2xl font-semibold mb-4">Popular Categories</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {% for category in categories %}
+        <div class="bg-white p-4 text-center shadow-md rounded-lg">
+            <a href="{% url 'category_products' category.id %}" class="text-gray-700 font-semibold">{{ category.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- 🔹 Featured Listings -->
+<section class="container mx-auto mt-10">
+    <h2 class="text-2xl font-semibold mb-4">Today's Deals</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {% for product in featured_products %}
+        <div class="bg-white p-4 shadow-md rounded-lg">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" class="w-full h-40 object-cover rounded-md">
+            <h3 class="mt-2 text-lg font-semibold">{{ product.title }}</h3>
+            <p class="text-gray-600 mt-1">${{ product.price }}</p>
+            <a href="{% url 'product_detail' product.id %}" class="block mt-3 bg-blue-500 text-white text-center py-2 rounded-md">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- 🔹 Footer -->
+<footer class="bg-gray-800 text-white text-sm mt-10">
+    <div class="container mx-auto py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div>
+            <h4 class="font-semibold">Buy</h4>
+            <ul>
+                <li><a href="#" class="hover:underline">Registration</a></li>
+                <li><a href="#" class="hover:underline">Bidding</a></li>
+                <li><a href="#" class="hover:underline">Buying Help</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold">Sell</h4>
+            <ul>
+                <li><a href="#" class="hover:underline">Start Selling</a></li>
+                <li><a href="#" class="hover:underline">Seller Center</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold">Stay Connected</h4>
+            <ul>
+                <li><a href="#" class="hover:underline">Facebook</a></li>
+                <li><a href="#" class="hover:underline">Twitter</a></li>
+                <li><a href="#" class="hover:underline">Instagram</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-semibold">Help & Support</h4>
+            <ul>
+                <li><a href="#" class="hover:underline">Customer Service</a></li>
+                <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="text-center mt-6">© 2025 eBay Clone. All rights reserved.</p>
+</footer>
 
 {% endblock %}
