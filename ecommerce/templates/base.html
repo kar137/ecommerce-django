@@ -7,8 +7,16 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body class="bg-gray-100">
-    {% block content %}
-    
-    {% endblock %}   
+
+    <header>{% include "navbar.html" %}</header>
+
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+    <footer class="bg-gray-800 text-white text-sm mt-10">{% include "footer.html" %}</footer>
+
 </body>
 </html>
