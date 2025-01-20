@@ -6,36 +6,36 @@ This is a full-featured **eBay Clone** built using **Django**. It provides a mar
 
 ## 🚀 Features
 
-### ![alt text](image-1.png)**User Authentication**
+### ![alt text](images/image-1.png)**User Authentication**
 
 - User registration and login (Django authentication system)
 - Password reset feature
 - User profile management (profile picture, address, payment details)
 
-### ![alt text](image-2.png)**Product Listings & Auctions**
+### ![alt text](images/image-2.png)**Product Listings & Auctions**
 
 - Add, edit, and delete product listings
 - Auction-based bidding system with automatic expiry
 - "Buy Now" option for instant purchases
 - Product categories & filtering
 
-### ![alt text](image-3.png)**Payment Integration**
+### ![alt text](images/image-3.png)**Payment Integration**
 
 - Esewa/Khalti payment gateways
 - Secure checkout process
 
-### ![alt text](image-4.png)**Messaging System**
+### ![alt text](images/image-4.png)**Messaging System**
 
 - Buyer-seller chat for direct communication
 - Real-time messaging with WebSockets (Django Channels)
 
-### ![alt text](image-5.png)**Order & Review System**
+### ![alt text](images/image-5.png)**Order & Review System**
 
 - Order history
 - Product reviews & ratings
 - Seller reputation system
 
-### ![alt text](image-6.png)**Admin Panel**
+### ![alt text](images/image-6.png)**Admin Panel**
 
 - Manage users, products, and transactions
 - Moderate reported listings
