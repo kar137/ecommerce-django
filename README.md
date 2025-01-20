@@ -6,39 +6,39 @@ This is a full-featured **eBay Clone** built using **Django**. It provides a mar
 
 ## 🚀 Features
 
-### ![alt text](images/image-1.png)**User Authentication**
+### 🔑 **User Authentication**
 
-- User registration and login (Django authentication system)
-- Password reset feature
-- User profile management (profile picture, address, payment details)
+✅ User registration & login (Django authentication system)
+✅ Password reset feature
+✅ User profile management (profile picture, address, payment details)
 
-### ![alt text](images/image-2.png)**Product Listings & Auctions**
+### 🛒 **Product Listings & Auctions**
 
-- Add, edit, and delete product listings
-- Auction-based bidding system with automatic expiry
-- "Buy Now" option for instant purchases
-- Product categories & filtering
+✅ Add, edit, and delete product listings
+✅ Auction-based bidding system with automatic expiry
+✅ "Buy Now" option for instant purchases
+✅ Product categories & filtering
 
-### ![alt text](images/image-3.png)**Payment Integration**
+### 💰 **Payment Integration**
 
-- Esewa/Khalti payment gateways
-- Secure checkout process
+✅ Esewa/Khalti payment gateways
+✅ Secure checkout process
 
-### ![alt text](images/image-4.png)**Messaging System**
+### 💬 **Messaging System**
 
-- Buyer-seller chat for direct communication
-- Real-time messaging with WebSockets (Django Channels)
+✅ Buyer-seller chat for direct communication
+✅ Real-time messaging with WebSockets (Django Channels)
 
-### ![alt text](images/image-5.png)**Order & Review System**
+### ⭐ **Order & Review System**
 
-- Order history
-- Product reviews & ratings
-- Seller reputation system
+✅ Order history tracking
+✅ Product reviews & ratings
+✅ Seller reputation system
 
-### ![alt text](images/image-6.png)**Admin Panel**
+### ⚙️ **Admin Panel**
 
-- Manage users, products, and transactions
-- Moderate reported listings
+✅ Manage users, products, and transactions
+✅ Moderate reported listings
 
 ## 🏗️ Tech Stack
 
