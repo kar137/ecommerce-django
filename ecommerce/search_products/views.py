@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView
+from django.views.generic import FormView, ListView
 from .models import Category, Product
 from .forms import ProductForm
 
@@ -15,25 +15,15 @@ class HomeView(ListView):
     
 
 #view for product details
-class ProductView(ListView):
+class ProductView(FormView, ListView):
     template_name = "search_products/product_form.html"
-    model = Product
-    
-    #worksout with the productform
-    def post(self, request):
-        form = ProductForm(request.POST)
+    form_class = ProductForm
+    success_url = "/products/"  # Redirect after successful form submission
+    context_object_name = "featured_products"
 
-        if form.is_valid():   #validates the form
-            form.save()
-            products = Product.objects.all()   #access all the products saved to the database
-            return HttpResponseRedirect("search_products/home.html", {
-                "featured_products": products,
-            })
-        
-        return render(request, "search_products/product_form.html", {
-            "form": form,
-        })
-    
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 
 
