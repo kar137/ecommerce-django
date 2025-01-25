@@ -5,6 +5,7 @@ class ProductForm(forms.ModelForm):
     
     class Meta:
         model = Product 
+        fields = "__all__"
         exclude = ["created_at",]   #excludes the field given
 
     #adds tailwindcss styling
