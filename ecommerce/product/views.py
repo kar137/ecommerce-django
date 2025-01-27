@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import FormView, ListView
-from search_products.forms import ProductForm
-from search_products.models import Product
+from .forms import ProductForm
+from .models import Product
 
 # Create your views here.
 

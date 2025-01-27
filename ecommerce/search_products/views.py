@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic.base import TemplateView
 from django.views.generic import FormView, ListView
-from .models import Category, Product
-from .forms import ProductForm
+from .models import Category
 
 # Create your views here.
 
