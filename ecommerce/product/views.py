@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import FormView, ListView
+from django.views.generic.base import TemplateView
 from .forms import ProductForm
 from .models import Product
 
@@ -9,7 +10,7 @@ from .models import Product
 class ProductView(FormView, ListView):
     template_name = "product/product_form.html"
     form_class = ProductForm
-    success_url = "home"  # Redirect after successful form submission
+    success_url = "product-detail"  # Redirect after successful form submission
     context_object_name = "featured_products"
 
     def get_queryset(self):
@@ -25,3 +26,6 @@ class ProductView(FormView, ListView):
         context = super().get_context_data(**kwargs)
         context['form'] = self.get_form()  # Add the form to the context
         return context
+    
+class ProductDetailView(TemplateView):
+    template_name = "product/product_detail.html"
