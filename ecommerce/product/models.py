@@ -11,7 +11,7 @@ class Product(models.Model):
     is_featured = models.BooleanField(blank=False, null=False, default=False)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveBigIntegerField(default=0)
-    image = models.ImageField(upload_to="static/product_images/", blank=True, null=True)
+    image = models.ImageField(upload_to="product_images/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
