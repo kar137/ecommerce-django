@@ -27,5 +27,8 @@ class ProductView(FormView, ListView):
         context['form'] = self.get_form()  # Add the form to the context
         return context
     
-class ProductDetailView(TemplateView):
+class ProductDetailView(ListView):
     template_name = "product/product_detail.html"
+    model = Product
+    context_object_name = "product"
+
