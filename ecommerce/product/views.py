@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import FormView, ListView
+from django.views.generic import FormView, ListView, DetailView
 from django.views.generic.base import TemplateView
 from .forms import ProductForm
 from .models import Product
@@ -27,5 +27,8 @@ class ProductView(FormView, ListView):
         context['form'] = self.get_form()  # Add the form to the context
         return context
     
-class ProductDetailView(TemplateView):
+class ProductDetailView(DetailView):
     template_name = "product/product_detail.html"
+    model = Product
+    context_object_name = "product"
+
