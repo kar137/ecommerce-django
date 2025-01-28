@@ -6,39 +6,32 @@ This is a full-featured **eBay Clone** built using **Django**. It provides a mar
 
 ## 🚀 Features
 
-### 🔑 **User Authentication**
+### 🔑 User Authentication
+- User registration and login using Django's authentication system.
+- Password reset functionality via email.
+- User profile management (profile picture, address, payment details).
 
--User registration & login (Django authentication system)
--Password reset feature
--User profile management (profile picture, address, payment details)
+### 🛒 Product Listings & Auctions
+- Add, edit, and delete product listings.
+- Auction-based bidding system with automatic expiry.
+- "Buy Now" option for instant purchases.
+- Product categories and filtering.
 
-### 🛒 **Product Listings & Auctions**
+### 💰 Payment Integration
+- Integration with Esewa and Khalti payment gateways.
+- Secure checkout process.
 
--Add, edit, and delete product listings
--Auction-based bidding system with automatic expiry
--"Buy Now" option for instant purchases
--Product categories & filtering
+### 💬 Messaging System
+- Real-time buyer-seller chat using WebSockets (Django Channels).
 
-### 💰 **Payment Integration**
+### ⭐ Order & Review System
+- Order history tracking for users.
+- Product reviews and ratings.
+- Seller reputation system.
 
--Esewa/Khalti payment gateways
--Secure checkout process
-
-### 💬 **Messaging System**
-
--Buyer-seller chat for direct communication
--Real-time messaging with WebSockets (Django Channels)
-
-### ⭐ **Order & Review System**
-
--Order history tracking
--Product reviews & ratings
--Seller reputation system
-
-### ⚙️ **Admin Panel**
-
--Manage users, products, and transactions
--Moderate reported listings
+### ⚙️ Admin Panel
+- Manage users, products, and transactions.
+- Moderate reported listings.
 
 ## 🏗️ Tech Stack
 
@@ -65,8 +58,8 @@ pip install -r requirements.txt
 
 4️⃣ Configure Database
 Set up PostgreSQL or MySQL
-
 Update DATABASES settings in settings.py
+
 5️⃣ Apply Migrations
 python manage.py migrate
 
@@ -77,7 +70,7 @@ python manage.py runserver
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🎯 Contributing
 
