@@ -13,8 +13,7 @@
                 <!-- Product Image -->
                 <div class="md:w-1/2">
                     {% if product.image %}
-                        print(product.image)
-                        <img src="{% static "product_images/product.image" %}" alt="{{ product.name }}" class="w-full h-full object-cover">
+                        <img src="{% static 'product_images/'|join:product.image %}" alt="{{ product.name }}" class="w-full h-full object-cover">
                     {% else %}
                         <div class="flex items-center justify-center h-full bg-gray-200">
                             <p class="text-gray-500">No image available</p>
