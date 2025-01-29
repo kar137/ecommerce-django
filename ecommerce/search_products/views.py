@@ -14,6 +14,12 @@ class HomeView(ListView):
     model = Category
     context_object_name = "categories"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["featured_products"] = Product.objects.filter(is_featured = True)
+        return context
+    
+
 class CategoryProductsView(DetailView):
     template_name = "search_products/category_products.html"
     model = Category
