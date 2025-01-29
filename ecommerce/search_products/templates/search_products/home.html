@@ -32,7 +32,7 @@
             <img src="{{ product.image.url }}" alt="{{ product.title }}" class="w-full h-40 object-cover rounded-md">
             <h3 class="mt-2 text-lg font-semibold">{{ product.name }}</h3>
             <p class="text-gray-600 mt-1">${{ product.price }}</p>
-            <a href="{% url 'product_detail' product.id %}" class="block mt-3 bg-blue-500 text-white text-center py-2 rounded-md">View Details</a>
+            <a href="{% url 'product-detail' product.id %}" class="block mt-3 bg-blue-500 text-white text-center py-2 rounded-md">View Details</a>
         </div>
         {% endfor %}
     </div>
