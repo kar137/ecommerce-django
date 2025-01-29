@@ -22,7 +22,7 @@
                 <div class="mt-4">
                     <h2 class="text-lg font-semibold text-gray-800">{{ product.name }}</h2>
                     <p class="text-gray-600 mt-1">${{ product.price }}</p>
-                    <a href="{% url 'product_detail' product.id %}" class="block mt-4 bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600">View Details</a>
+                    <a href="{% url 'product-detail' product.id %}" class="block mt-4 bg-blue-500 text-white text-center py-2 rounded-md hover:bg-blue-600">View Details</a>
                 </div>
             </div>
             {% endfor %}
