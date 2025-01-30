@@ -7,6 +7,7 @@ class ProductForm(forms.ModelForm):
         model = Product 
         fields = "__all__"
         exclude = ["created_at",]   #excludes the field given
+        
     #adds tailwindcss styling
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
