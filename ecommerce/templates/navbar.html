@@ -32,7 +32,9 @@
             <div class="flex items-center bg-white border border-gray-300 rounded-lg overflow-hidden p-2 space-x-2">
                 <!-- Category Dropdown -->
                 <select title="categories" class="px-4 py-2 bg-gray-200 text-sm border-r focus:outline-none rounded-md">
-                    <option>All Categories</option>
+                    {% for category in categories %}
+                    <option>{{category.name}}</option>
+                    {% endfor %}
                 </select>
         
                 <!-- Search Input -->
