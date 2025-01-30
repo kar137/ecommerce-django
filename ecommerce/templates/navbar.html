@@ -29,9 +29,9 @@
           
         <!-- Search Bar -->
         <div class="flex-grow mx-6 p-2">
-            <div class="flex items-center bg-white border border-gray-300 rounded-lg overflow-hidden p-2 space-x-2">
+            <div class="flex items-center bg-white  border-gray-300 rounded-lg overflow-hidden p-2 space-x-2">
                 <!-- Category Dropdown -->
-                <select title="categories" class="px-4 py-2 bg-gray-200 text-sm border-r focus:outline-none rounded-md">
+                <select title="categories" class="px-3 py-2 text-sm border-r focus:outline-none">
                     <option selected disabled>Shop by category</option>
                     {% for category in categories %}
                     <option>{{category.name}}</option>
@@ -40,10 +40,10 @@
         
                 <!-- Search Input -->
                 <input type="text" placeholder="Search for anything"
-                    class="flex-grow px-4 py-2 text-gray-700 focus:outline-none border border-gray-300 rounded-md">
+                    class="flex-grow px-4 py-2 text-black focus:outline border-2 border-gray-500 rounded-3xl">
         
                 <!-- Search Button -->
-                <button class="bg-yellow-400 px-5 py-2 text-gray-900 font-bold rounded-md hover:bg-yellow-500 transition">
+                <button class="bg-blue-600 px-8 py-2  text-white font-semibold rounded-3xl hover:bg-blue-700 transition w-full md:w-auto">
                     Search
                 </button>
             </div>
