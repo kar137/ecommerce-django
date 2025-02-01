@@ -18,7 +18,7 @@
 <!-- Main Navigation -->
 <nav class="bg-white shadow-md py-3">
     <div class="container mx-auto flex justify-between items-center">
-        <a href="#">
+        <a href="">
             <ul class="flex px-3 space-x-0 font-ebay">
                 <li class="text-4xl font-bold text-red-600">e</li>
                 <li class="text-4xl font-bold text-blue-600">b</li>
@@ -31,10 +31,10 @@
         <div class="flex-grow mx-6 p-2">
             <div class="flex items-center bg-white  border-gray-300 rounded-lg overflow-hidden p-2 space-x-2">
                 <!-- Category Dropdown -->
-                <select title="categories" class="px-3 py-2 text-sm border-r focus:outline-none">
+                <select title="categories" class="px-3 py-2 text-sm border-r focus:outline-none" onchange="location = this.value;">
                     <option selected disabled>Shop by category</option>
                     {% for category in categories %}
-                    <option>{{category.name}}</option>
+                        <option value="{% url 'category-products' category.id %}">{{category.name}}</option>
                     {% endfor %}
                 </select>
         
