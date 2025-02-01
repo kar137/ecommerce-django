@@ -4,11 +4,76 @@
 
 {% block content %}
 
+<div class="mt-4">
+    <h2 class="text-2xl font-semibold mb-4">Explore Categories</h2>
+    <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('electronics')">
+            <p class="font-semibold">Electronics</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('motors')">
+            <p class="font-semibold">Motors</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('fashion')">
+            <p class="font-semibold">Fashion</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('collectibles')">
+            <p class="font-semibold">Collectibles and Art</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('sports')">
+            <p class="font-semibold">Sports</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('health')">
+            <p class="font-semibold">Health & Beauty</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('industrial')">
+            <p class="font-semibold">Industrial Equipment</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('home')">
+            <p class="font-semibold">Home & Garden</p>
+        </button>
+        <button class="feature-btn text-center p-4 bg-white rounded-lg shadow hover:bg-gray-200" onclick="toggleCategory('deals')">
+            <p class="font-semibold">Deals</p>
+        </button>
+    </div>
+</div>
+
+<!-- More Categories Section (Initially Hidden) -->
+<div id="electronics" class="category-details hidden mt-4">
+    <h3 class="text-xl font-semibold mb-2">Popular Electronics</h3>
+    <ul>
+        <li>Mobile Phones</li>
+        <li>Laptops & Computers</li>
+        <li>Headphones</li>
+    </ul>
+    <h3 class="text-xl font-semibold mt-4 mb-2">More Electronics</h3>
+    <ul>
+        <li>Tablets</li>
+        <li>Cameras</li>
+        <li>Smartwatches</li>
+    </ul>
+</div>
+<!-- Repeat similar blocks for other categories like motors, fashion, etc. -->
+<!-- Example for motors -->
+<div id="motors" class="category-details hidden mt-4">
+    <h3 class="text-xl font-semibold mb-2">Popular Motors</h3>
+    <ul>
+        <li>Cars</li>
+        <li>Motorcycles</li>
+        <li>Trucks</li>
+    </ul>
+    <h3 class="text-xl font-semibold mt-4 mb-2">More Motors</h3>
+    <ul>
+        <li>Boat & Watercraft</li>
+        <li>ATVs & UTVs</li>
+    </ul>
+</div>
+</div>
+
 <!--  Hero Section -->
 <header class="relative bg-gray-800 text-white text-center py-16 my-8 mx-3 md:mx-12 rounded-xl">
     <h1 class="text-4xl font-bold">Great Deals & Discounts</h1>
     <p class="mt-2 text-lg">Shop top brands and trending products</p>
-    <button class="mt-6 bg-yellow-400 text-gray-900 px-6 py-3 rounded-md font-bold">Shop Now</button>
+    <a href="{% url 'shop-now' %}"><button class="mt-6 bg-yellow-400 text-gray-900 px-6 py-3 rounded-md font-bold">Shop Now</button></a>
 </header>
 
 <!--  Categories -->
