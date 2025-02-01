@@ -30,6 +30,12 @@ class CategoryProductsView(DetailView):
         category = get_object_or_404(Category, id = self.kwargs['pk'])  #helps to retrieve pk from the url
         context["products"] = Product.objects.filter(category = category)
         return context
+
+class ShopNowView(ListView):
+    template_name = "search_products/shopnow.html"
+    model = Product
+    context_object_name = "products"   
+
     
     
 
