@@ -32,6 +32,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'search_products',
+    'accounts',
+    'rest_framework',
+    'rest_framework.authtoken',
     'product',
     'widget_tweaks',
     'django.contrib.admin',
@@ -41,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+Auth_User_Model = 'accounts.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
