@@ -1,4 +1,4 @@
-# eBay Clone - Django E-commerce Platform
+# Django E-commerce Platform
 
 ## 📌 Project Overview
 
