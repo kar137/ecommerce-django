@@ -10,9 +10,7 @@ from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
-class UserRegistrationView(APIView, TemplateView):   #handle user registration via post request
-    template_name = "accounts/register.html"
-    
+class UserRegistrationView(APIView):   #handle user registration via post request
     def post(self, request):
         serializer = UserRegistrationSerializer(data = request.data)
         if serializer.is_valid():
@@ -20,6 +18,10 @@ class UserRegistrationView(APIView, TemplateView):   #handle user registration v
             token, created = Token.objects.get_or_create(user=user)  #generates token for the registerd user
             return Response({"token": token.key, "user_id": user.id}, status=status.HTTP_201_CREATED )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class UserRegistrationTemplateView(TemplateView):
+    template_name = "accounts/register.html"
+
 
 class UserLoginView(APIView):
     def post(self, request):
