@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.base import TemplateView
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,7 +10,9 @@ from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
-class UserRegistrationView(APIView):    #handle user registration via post request
+class UserRegistrationView(APIView, TemplateView):   #handle user registration via post request
+    template_name = "accounts/register.html"
+    
     def post(self, request):
         serializer = UserRegistrationSerializer(data = request.data)
         if serializer.is_valid():
