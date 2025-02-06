@@ -20,7 +20,10 @@ class UserRegistrationView(APIView):   #handle user registration via post reques
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class UserRegistrationTemplateView(TemplateView):
-    template_name = "accounts/register.html"
+    template_name = "register"
+
+class UserRegistrationTemplateView(TemplateView):
+    template_name = "login"
 
 
 class UserLoginView(APIView):
