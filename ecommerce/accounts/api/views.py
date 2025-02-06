@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from rest_framework.permissions import AllowAny
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -11,6 +12,8 @@ from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 
 class UserRegistrationView(APIView):   #handle user registration via post request
+    authentication_classes = []    #disables authentication for registration
+    permission_classes = [AllowAny]  # allows any user to register
     def post(self, request):
         serializer = UserRegistrationSerializer(data = request.data)
         if serializer.is_valid():
