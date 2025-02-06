@@ -22,6 +22,9 @@ class UserRegistrationView(APIView):   #handle user registration via post reques
 class UserRegistrationTemplateView(TemplateView):
     template_name = "accounts/register.html"
 
+class UserLoginTemplateView(TemplateView):
+    template_name = "accounts/login.html"
+
 
 class UserLoginView(APIView):
     def post(self, request):

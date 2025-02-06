@@ -35,7 +35,7 @@
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData.entries());
 
-      const response = await fetch("/accounts/api/register/", {
+      const response = await fetch("/accounts/register/", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
