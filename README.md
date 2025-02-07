@@ -46,7 +46,7 @@ This is a full-featured **eBay Clone** built using **Django**. It provides a mar
 
 ```bash
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/ebay-clone.git
+git clone https://github.com/kar137/ecommerce-django.git
 cd ebay-clone
 
 2️⃣ Create Virtual Environment
@@ -76,10 +76,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Contributions are welcome! Follow these steps:
 
--Fork the repository(Don't forget to star)
--Create a new branch (feature-xyz)
--Commit changes & push to GitHub
--Open a Pull Request
+- Fork the repository(Don't forget to star)
+- Create a new branch (feature-xyz)
+- Commit changes & push to GitHub
+- Open a Pull Request
 
 ## 📬 Contact
 
