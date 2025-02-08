@@ -38,7 +38,7 @@
 
       const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-      const response = await fetch("/accounts/api/register/", {
+      const response = await fetch("/accounts/api/register/", {    //sends a post request to registration api endpoint
         method: 'POST',
         headers: {
           'X-CSRFToken': csrfToken
