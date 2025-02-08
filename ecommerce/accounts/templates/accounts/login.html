@@ -3,44 +3,49 @@
 {% block title %} Login {% endblock %}
 
 {% block content %}
-<div class="bg-white p-8 rounded-lg shadow-md w-96">
-    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-    <form id="loginForm">
-      <div class="mb-4">
-        <label class="block text-gray-700">Username</label>
-        <input title="username" type="text" name="username" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      <div class="mb-6">
-        <label class="block text-gray-700">Password</label>
-        <input title="password" type="password" name="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Login</button>
-    </form>
-    <p class="mt-4 text-center">Don't have an account? <a href="/register/" class="text-blue-500">Register</a></p>
-  </div>
+<div class="flex justify-center items-start min-h-screen bg-gray-100 pt-10">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+      <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+      <form id="loginForm">
+        {% csrf_token %}
+        <div class="mb-4">
+          <label class="block text-gray-700">Username</label>
+          <input title="username" type="text" name="username" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700">Password</label>
+          <input title="password" type="password" name="password" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Login</button>
+      </form>
+      <p class="mt-4 text-center">Don't have an account? <a href="{% url 'register' %}" class="text-blue-500">Register</a></p>
+    </div>
+</div>
 
   <script>
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const formData = new FormData(e.target);
-      const data = Object.fromEntries(formData.entries());
+      const form = e.target;
+      const formData = new FormData(form);
 
-      const response = await fetch('/api/accounts/login/', {
+      const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+      const response = await fetch('/accounts/api/login/', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'X-CSRFToken': csrfToken
         },
-        body: JSON.stringify(data),
+        body: formData,
       });
 
       if (response.ok) {
         const result = await response.json();
         localStorage.setItem('token', result.token);  // Store token in localStorage
         alert('Login successful!');
-        window.location.href = '/profile/';  // Redirect to profile page
+        window.location.href = '/accounts/profile/';  // Redirect to profile page
       } else {
         const error = await response.json();
-        alert(`Error: ${error.detail || 'Login failed'}`);
+        alert(`Error: ${JSON.stringify(error)}`);
       }
     });
   </script>
