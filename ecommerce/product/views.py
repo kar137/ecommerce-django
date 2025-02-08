@@ -11,12 +11,11 @@ class ProductView(FormView, ListView):
     template_name = "product/product_form.html"
     form_class = ProductForm
     success_url = "product-detail"  # Redirect after successful form submission
-    model = Product
     context_object_name = "products"
 
     def get_queryset(self):
         # Customize the queryset for featured products
-        return Product.objects.filter(is_featured=True)
+        return Product.objects.order_by("created_at")[:5] # Orders the products in descending order and use slicing technique
 
     def form_valid(self, form):
         form.save()
