@@ -11,7 +11,8 @@ class ProductView(FormView, ListView):
     template_name = "product/product_form.html"
     form_class = ProductForm
     success_url = "product-detail"  # Redirect after successful form submission
-    context_object_name = "featured_products"
+    model = Product
+    context_object_name = "products"
 
     def get_queryset(self):
         # Customize the queryset for featured products
