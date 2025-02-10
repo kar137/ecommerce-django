@@ -47,11 +47,8 @@
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">
                 Add Product
             </button>
-<<<<<<< HEAD
         </form>    
-=======
         </form>
->>>>>>> 6347d0706809b0e25c16c4e36480b8190d7048f7
     </div>
 
 </section>
@@ -62,20 +59,13 @@
     {% for product in products %}
     <div class="bg-white p-4 text-center shadow-md rounded-lg">
         {% if product.image %}
-<<<<<<< HEAD
         <div class="w-full h-40 mb-3">
             <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover rounded-md">
-        </div>
-            
+        </div>     
         {% else %}
             <div class="w-full h-40 flex items-center justify-center bg-gray-200 mb-3 rounded-md ">
                 <p>No image available</p>
             </div>
-=======
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-40 object-cover rounded-md">
-        {% else %}
-            <p>No image available</p>
->>>>>>> 6347d0706809b0e25c16c4e36480b8190d7048f7
         {% endif %}
         <h3 class="text-gray-700 font-semibold">{{ product.name }}</h3>
         <p class="text-gray-500">Category: {{ product.category.name }}</p>
