@@ -15,12 +15,9 @@ class ProductView(FormView, ListView):
 
     def get_queryset(self):
         # Customize the queryset for featured products
-<<<<<<< HEAD
         return Product.objects.order_by("created_at")[:5]   #orders the products in descending order and selects the top five
-=======
         return Product.objects.order_by("created_at")[:5] # Orders the products in descending order and use slicing technique
->>>>>>> 6347d0706809b0e25c16c4e36480b8190d7048f7
-
+    
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
