@@ -58,9 +58,14 @@
     {% for product in products %}
     <div class="bg-white p-4 text-center shadow-md rounded-lg">
         {% if product.image %}
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-40 object-cover rounded-md">
+        <div class="w-full h-40 mb-3">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover rounded-md">
+        </div>
+            
         {% else %}
-            <p>No image available</p>
+            <div class="w-full h-40 flex items-center justify-center bg-gray-200 mb-3 rounded-md ">
+                <p>No image available</p>
+            </div>
         {% endif %}
         <h3 class="text-gray-700 font-semibold">{{ product.name }}</h3>
         <p class="text-gray-500">Category: {{ product.category.name }}</p>
