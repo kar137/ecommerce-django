@@ -60,7 +60,7 @@
     <div class="bg-white p-4 text-center shadow-md rounded-lg">
         {% if product.image %}
         <div class="w-full h-40 mb-3">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-cover rounded-md">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-full h-full object-contain rounded-md">
         </div>     
         {% else %}
             <div class="w-full h-40 flex items-center justify-center bg-gray-200 mb-3 rounded-md ">
