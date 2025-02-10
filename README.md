@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This is a full-featured **eBay Clone** built using **Django**. It provides a marketplace where users can list products, place bids in auctions, buy items instantly, communicate with sellers, and make secure payments. The project follows **Django's best practices** and implements core e-commerce functionalities.
+This is a full-featured **E-commerce Platform** built using **Django**. It provides a marketplace where users can list products, buy items instantly, communicate with sellers, and make secure payments. The project follows **Django's best practices** and implements core e-commerce functionalities.
 
 ## 🚀 Features
 
