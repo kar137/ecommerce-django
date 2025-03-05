@@ -1,12 +1,25 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic import DetailView, ListView
 from django.shortcuts import get_object_or_404
+from elasticsearch_dsl import Q
 from product.models import Product
 from .models import Category
-
+from documents import ProductDocument
 # Create your views here.
+
+
+class SearchView(View):
+    template_name = 'search.html'
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get('q', '')
+        results = []
+
+        if query:
+            q = Q('multi_match', query=query, fiels=['name', 'description'])
+            results = ProductDocument.search.query(Q)
+        return render(request, self.template_name, {'results': results, 'query': query})
 
 #renders home view
 class HomeView(ListView):
