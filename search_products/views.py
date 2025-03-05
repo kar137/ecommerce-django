@@ -6,19 +6,19 @@ from django.shortcuts import get_object_or_404
 from elasticsearch_dsl import Q
 from product.models import Product
 from .models import Category
-from documents import ProductDocument
+from search_products.documents import ProductDocument
 # Create your views here.
 
 
 class SearchView(View):
-    template_name = 'search.html'
+    template_name = 'search_products/search_products.html'
     def get(self, request, *args, **kwargs):
         query = request.GET.get('q', '')
         results = []
 
         if query:
             q = Q('multi_match', query=query, fiels=['name', 'description'])
-            results = ProductDocument.search.query(Q)
+            results = ProductDocument.search().query(q)
         return render(request, self.template_name, {'results': results, 'query': query})
 
 #renders home view
