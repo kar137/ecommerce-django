@@ -36,7 +36,7 @@ This is a full-featured **E-commerce Platform** built using **Django**. It provi
 ## 🏗️ Tech Stack
 
 - **Backend:** Django, Django REST Framework (DRF)
-- **Database:** PostgreSQL / MySQL
+- **Database:** PostgreSQL
 - **Frontend:** HTML, CSS, Tailwind
 - **Real-time Features:** Django Channels, WebSockets
 - **Payments:** Esewa / Khalti
